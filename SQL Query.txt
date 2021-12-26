@@ -1,0 +1,41 @@
+create table dbo.Roles (
+RoleID int identity(1,1),
+RoleDescription varchar (500)
+)
+
+insert into dbo.Roles values ('Manager')
+insert into dbo.Roles values ('BarTender')
+insert into dbo.Roles values ('Waiter')
+
+
+
+create table dbo.Employees (
+EmployeeID int identity(1,1),
+EmployeeName varchar (500)
+)
+
+insert into dbo.Employees values ('Joe Biden')
+insert into dbo.Employees values ('Donald Trump')
+insert into dbo.Employees values ('Barak Obama')
+
+
+
+create table dbo.EmployeeRoles (
+EmployeeID int,
+RoleID int,
+IsEnabled bit
+)
+
+insert into dbo.EmployeeRoles values (1, 1, 1)
+insert into dbo.EmployeeRoles values (2, 2, 1)
+insert into dbo.EmployeeRoles values (2, 3, 1)
+insert into dbo.EmployeeRoles values (3, 2, 0)
+insert into dbo.EmployeeRoles values (3, 3, 1)
+
+
+
+create table dbo.Attendance (
+EmployeeID int,
+RoleID int,
+ClockInTime DateTime
+)
